@@ -6,7 +6,11 @@ export default function Footer() {
   return (
     <Paper className="py-20">
       <Container>
-        <H3> About Daska Corn </H3>
+        <H3>
+          {" "}
+          About {process.env.REACT_APP_FIRST_NAME}{" "}
+          {process.env.REACT_APP_LAST_NAME}{" "}
+        </H3>
         <P1>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

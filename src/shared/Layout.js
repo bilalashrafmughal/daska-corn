@@ -9,6 +9,9 @@ export const Paper = styled.div`
 
 export const Container = styled.section`
   padding: 14px 56px;
+  @media (min-width: 0px) and (max-width: 767px) {
+    padding: 14px 30px;
+  }
 `;
 
 export const Divider = styled.div`

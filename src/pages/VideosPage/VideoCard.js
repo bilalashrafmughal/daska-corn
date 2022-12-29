@@ -17,8 +17,8 @@ export default function VideoCard({ video }) {
       >
         <div className="card-image-box overflow-hidden cursor-pointer relative">
           <img
-            src="/assets/card-image.png"
-            // src={video.default_thumb.src}
+            // src="/assets/card-image.png"
+            src={video.default_thumb.src}
             onError={() => "/assets/logo.png"}
             alt="card-img"
             className="w-full hover:scale-110"
@@ -56,5 +56,11 @@ const StyledCard = styled.div`
   .card-image-box img {
     transition: all ease 0.4s;
     min-height: 330px;
+    @media (min-width: 0px) and (max-width: 425px) {
+      min-height: 192px;
+    }
+    @media (min-width: 768px) and (max-width: 1022px) {
+      min-height: 180px;
+    }
   }
 `;

@@ -1,32 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-  "anal",
-  "gay",
-  "lesbian",
-  "shemale",
-  "step mom",
-  "anal",
-  "gay",
-  "lesbian",
-  "shemale",
-  "step mom",
-  "anal",
-  "gay",
-  "lesbian",
-  "shemale",
-  "step mom",
-  "anal",
-  "gay",
-  "lesbian",
-  "shemale",
-  "step mom",
-  "anal",
-  "gay",
-  "lesbian",
-  "shemale",
-  "step mom",
-];
+const initialState = [];
 
 const tabsSlice = createSlice({
   name: "tags",
