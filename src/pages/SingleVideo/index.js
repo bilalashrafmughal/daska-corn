@@ -37,7 +37,12 @@ export default function SingleVideo() {
             <H4>Views: {data?.views} </H4>
           </div>
 
-          <iframe src={data?.embed} width="100%" title={data?.title} />
+          <iframe
+            src={data?.embed}
+            width="100%"
+            title={data?.title}
+            allowFullScreen
+          />
         </StyledSingleVideo>
       </Container>
       <VideosHeader heading="Related Videos:" subHeading="" />
