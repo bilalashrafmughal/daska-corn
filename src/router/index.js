@@ -6,6 +6,8 @@ import { authenticate } from "store/authSlice";
 import AuthenticatedRoutes from "./AuthenticatedRoutes";
 import VideosPage from "pages/VideosPage";
 import PublicRoutes from "./PublicRoutes";
+import SingleVideo from "pages/SingleVideo";
+import Navbar from "components/Navbar";
 
 export default function MainRouter() {
   const dispatch = useDispatch();
@@ -15,12 +17,14 @@ export default function MainRouter() {
   return (
     <div>
       <Router>
+        {isAdult && <Navbar />}
         <Routes>
           <Route element={<PublicRoutes />}>
             <Route path="/" element={<Home />} />
           </Route>
           <Route element={<AuthenticatedRoutes />}>
             <Route path="/videos" element={<VideosPage />} />
+            <Route path="/videos/:id" element={<SingleVideo />} />
           </Route>
         </Routes>
       </Router>

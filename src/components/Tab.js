@@ -6,6 +6,7 @@ export default function Tab({ value, onClick }) {
     <StyledTab
       className="rounded-full mr-4 mb-4 inline px-6 py-5 cursor-pointer"
       onClick={onClick}
+      key={`${Math.random()}`}
     >
       {value}
     </StyledTab>

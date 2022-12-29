@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { SearchIcon } from "./SvgIcons";
 
 export default function SearchBar({ search = "", setSearch }) {
   const [value, setValue] = useState(search);
+
+  useEffect(() => {
+    setValue(search);
+  }, [search]);
 
   const handleSearch = () => {
     setSearch(value);

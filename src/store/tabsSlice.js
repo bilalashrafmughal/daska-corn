@@ -32,7 +32,10 @@ const tabsSlice = createSlice({
   name: "tags",
   initialState,
   reducers: {
-    updateTabs: (state, action) => (state = action.payload),
+    updateTabs: (state, action) => {
+      state = action.payload;
+      return state;
+    },
   },
 });
 

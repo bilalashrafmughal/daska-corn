@@ -1,13 +1,13 @@
 import React from "react";
-import { Container } from "shared/Layout";
-import { H2 } from "shared/Typography";
+import { Container, Paper } from "shared/Layout";
+import { H2, H4 } from "shared/Typography";
 
 export default function VideosHeader({ heading, subHeading }) {
   return (
     <Paper>
       <Container>
-        <H2> Videos </H2>
-        <H4> Page 1 | Page Size 10 </H4>
+        <H2> {heading} </H2>
+        <H4> {subHeading} </H4>
       </Container>
     </Paper>
   );

@@ -16,8 +16,13 @@ const StyledButton = styled.button`
   font-size: 29px;
   line-height: 44px;
   color: ${(props) => props.theme.colors.secondary};
+  transition: all ease 0.4s;
   :disabled {
     background-color: ${(props) => props.theme.colors.primary_disabled};
+  }
+  :active {
+    transform: scale(0.7);
+    opacity: 0.2;
   }
 `;
 

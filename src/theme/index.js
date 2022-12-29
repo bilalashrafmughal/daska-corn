@@ -6,5 +6,6 @@ export const theme = {
     secondary_100: "#D9D9D9",
     tertiary: "#333333",
     tertiary_100: "#464646",
+    tertiary_200: "#999292",
   },
 };

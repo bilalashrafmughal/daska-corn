@@ -1,24 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  query: "all",
+  query: "",
+  searchBar: "",
   per_page: 30,
   page: 1,
-  thumbsize: "medium",
-  order: "latest",
-  gay: 0,
-  lq: 1,
-  format: "json",
+  thumbsize: undefined,
+  order: undefined,
+  gay: undefined,
+  lq: undefined,
+  format: undefined,
 };
 
 export const querySlice = createSlice({
   initialState: initialState,
   name: "query",
   reducers: {
-    search: (state, action) => (state.query = action.payload),
-    loadMore: (state) => (state.per_page += 10),
-    nextPage: (state) => (state.page += 1),
-    prevPage: (state) => (state.page -= 1),
+    search: (state, action) => {
+      state.query = action.payload;
+      state.searchBar = action.payload;
+    },
+    searchByTab: (state, action) => {
+      state.query = action.payload;
+      state.searchBar = "";
+    },
+    loadMore: (state) => {
+      state.per_page += 10;
+      return state;
+    },
+    // nextPage: (state) => {
+    //   state.page += 1;
+    //   return state;
+    // },
+    // prevPage: (state) => {
+    //   state.page -= 1;
+    //   return state;
+    // },
+    setPage: (state, action) => {
+      state.page = action.payload;
+      return state;
+    },
     setThumbsize: (state, action) => (state.thumbsize = action.payload),
     // we can use these properties for thumbnail sizes
     // 1."small" thumbnail size 190x152
@@ -36,6 +57,10 @@ export const querySlice = createSlice({
     // "0" gay content not included
     // "1" gay content included
     // "2" only gay content
+    resetQuery: (state) => {
+      state = { ...state, ...initialState };
+      return state;
+    },
   },
 });
 
@@ -47,6 +72,9 @@ export const {
   setThumbsize,
   setOrder,
   changeQuality,
+  setPage,
+  resetQuery,
+  searchByTab,
 } = querySlice.actions;
 
 export default querySlice.reducer;

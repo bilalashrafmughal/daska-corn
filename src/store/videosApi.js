@@ -10,7 +10,12 @@ export const videosAPI = createApi({
         params: args,
       }),
     }),
+    getVideoById: builder.query({
+      query: (id) => ({
+        url: `/video/id/?id=${id}&thumbsize=big`,
+      }),
+    }),
   }),
 });
 
-export const { useGetVideosQuery } = videosAPI;
+export const { useGetVideosQuery, useGetVideoByIdQuery } = videosAPI;
