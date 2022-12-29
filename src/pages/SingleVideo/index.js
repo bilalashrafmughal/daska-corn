@@ -21,6 +21,10 @@ export default function SingleVideo() {
       dispatch(searchByTab(data.keywords.split(",")[0]));
     }
   }, [data, dispatch]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 200, left: 0, behavior: "smooth" });
+  }, [id]);
   return (
     <Paper>
       <Divider />
